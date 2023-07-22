@@ -1,0 +1,38 @@
+<!-- views/expenses.hbs -->
+
+<div class="container mt-5">
+  <h2>Expenses</h2>
+  <a href="/expense/add" class="btn btn-primary mb-3">Create Expense</a>
+  
+  {{#if expenses.length}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Category</th>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each expenses}}
+        <tr>
+          <td>{{@index}}</td>
+          <td>{{category}}</td>
+          <td>{{name}}</td>
+          <td>{{formatDate date}}</td> <!-- Use the formatDate helper to format the date -->
+          <td>{{amount}}</td>
+          <td>
+            <a href="/expense/edit/{{_id}}" class="btn btn-primary">Edit</a>
+            <a href="/expense/delete/{{_id}}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <p>No expenses are created yet. Please create one.</p>
+  {{/if}}
+</div>

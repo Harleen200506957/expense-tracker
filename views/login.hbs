@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center form-wrapper mt-4 ">
+    <div class="card w-50">
+        <div class="card-body">
+            <div class="alert alert-danger {{#if loginFailed}} d-none {{/if}}" role="alert">
+                Email or Password is Invalid
+            </div>
+            <form action="/login" method="POST">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control"
+                        aria-labelledby="passwordHelpBlock">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+            </form>
+
+            <div>
+                <p class="text-center">If you don't have an account, please <a href="/register"
+                        class="link-underline link-underline-opacity-0">Sign Up</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
